@@ -1,0 +1,91 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ADDDOCTOR
+    ADDPATIENT
+    ASSIGN
+    CHARACTER
+    NEWLINE
+    OPERATOR
+    WHITESPACE
+
+Grammar
+
+Rule 0     S' -> id
+Rule 1     id -> ID
+Rule 2     name -> NAME
+Rule 3     ssn -> SSN
+Rule 4     birthday -> BIRTHDAY
+Rule 5     availability -> AVAILABILITY
+Rule 6     expression -> CREATE name COLON
+Rule 7     expression -> PROTOCOLS COLON
+Rule 8     expression -> BEDS COLON
+Rule 9     expression -> BEDS LP DIGIT RP
+Rule 10    expression -> DOCTORS LP AVAILABLE RP COLON
+Rule 11    expression -> DOCTORS COLON
+Rule 12    expression -> SERVICES COLON
+Rule 13    expression -> INFO LP ID RP COLON
+Rule 14    expression -> UPDATE LP ID COMMA AVAILABILITY RP
+
+Terminals, with rules where they appear
+
+ADDDOCTOR            : 
+ADDPATIENT           : 
+ASSIGN               : 
+AVAILABILITY         : 5 14
+AVAILABLE            : 10
+BEDS                 : 8 9
+BIRTHDAY             : 4
+CHARACTER            : 
+COLON                : 6 7 8 10 11 12 13
+COMMA                : 14
+CREATE               : 6
+DIGIT                : 9
+DOCTORS              : 10 11
+ID                   : 1 13 14
+INFO                 : 13
+LP                   : 9 10 13 14
+NAME                 : 2
+NEWLINE              : 
+OPERATOR             : 
+PROTOCOLS            : 7
+RP                   : 9 10 13 14
+SERVICES             : 12
+SSN                  : 3
+UPDATE               : 14
+WHITESPACE           : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+availability         : 
+birthday             : 
+expression           : 
+id                   : 0
+name                 : 6
+ssn                  : 
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . id
+    (1) id -> . ID
+
+    ID              shift and go to state 2
+
+    id                             shift and go to state 1
+
+state 1
+
+    (0) S' -> id .
+
+
+
+state 2
+
+    (1) id -> ID .
+
+    $end            reduce using rule 1 (id -> ID .)
+

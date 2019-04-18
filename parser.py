@@ -43,3 +43,12 @@ def p_error(p):
 
 # Build parser
 parser = yacc.yacc()
+
+while True:
+    try:
+        s = input('Health >> ')
+    except EOFError:
+        break
+    if not s: continue
+    result = parser.parse(s)
+    print(result)
