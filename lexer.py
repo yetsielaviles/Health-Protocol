@@ -27,7 +27,8 @@ reserved = {
     'information': 'INFO',
     'update': 'UPDATE',
     'addDoctor': 'ADDDOCTOR',
-    'addPatient': 'ADDPATIENT'
+    'addPatient': 'ADDPATIENT',
+    'available': 'AVAILABLE'
 }
 
 tokens = tokens + list(reserved.values())
@@ -44,6 +45,10 @@ t_ASSIGN = r'='
 # t_OPERATOR = "'.-/"
 literals = ".-'"  # operators
 
+def t_AVAILABILITY(t):
+    r'Yes|No'
+    return t
+
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z0-9_]*'
     if t.value in reserved:
@@ -51,9 +56,17 @@ def t_ID(t):
     return t
 
 def t_NAME(t):
-    r'[a-zA-Z_]+[a-zA-Z_]'
+    r'[a-zA-Z_]+'
     if t.value in reserved:
         t.type = reserved[t.value]
+    return t
+
+def t_SSN(t):
+    r'[0-9]{4}'
+    return t
+
+def t_DIGIT(t):
+    r'[0-9]'
     return t
 
 # Error
