@@ -1,7 +1,47 @@
-Carlos Javier
-JAJAJAJA
-# Hola hi
-c123er - .
-22
-1234
-Yes No yes
+create_protocols gsw:
+
+protocols:
+	gsw
+	heart attack
+	broken bone
+
+addDoctor(Name=Dr.Jose Gonzales, Date of birth= 23/01/1968, Social Security Number= 9999, Availability=Yes, Identifier=1A)
+
+addPatient((Name=Juan Del Pueblo, Date of birth= 28/08/1987, Social Security Number= 0123, Protocol=broken bone, Identifier=1B)
+	
+beds:
+	121-A
+	345-B
+	234
+	134
+	ICU-2
+
+beds(3):
+	344-A
+	328-A
+	312
+	301-B
+	
+doctors:
+	Dr.Pedro Alvarado
+	Dr.Juan Rodriguez
+
+doctors(AVAILABLE):
+	Dr.Jose Gonzalez
+	Dra.Ana Crespo
+	
+services:
+	injections
+	medication
+	ER
+	blood sample
+
+
+update(1A, No)
+
+info(1A):
+	Dr.Jose Gonzales
+	23/01/1968
+	9999
+	No
+	1A

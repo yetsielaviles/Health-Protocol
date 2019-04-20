@@ -15,8 +15,7 @@ tokens = ['CHARACTER',
           'SSN',
           'AVAILABILITY',
           'NEWLINE',
-          'WHITESPACE'
-]
+          'WHITESPACE']
 
 reserved = {
     'create': 'CREATE',
@@ -24,7 +23,7 @@ reserved = {
     'beds': 'BEDS',
     'doctors': 'DOCTORS',
     'services': 'SERVICES',
-    'information': 'INFO',
+    'info': 'INFO',
     'update': 'UPDATE',
     'addDoctor': 'ADDDOCTOR',
     'addPatient': 'ADDPATIENT',
@@ -46,28 +45,36 @@ t_ASSIGN = r'='
 literals = ".-'"  # operators
 
 def t_AVAILABILITY(t):
-    r'Yes|No'
+    r'Yes|No|yes|no'
     return t
 
-def t_ID(t):
-    r'[a-zA-Z_][a-zA-Z0-9_]*'
-    if t.value in reserved:
-        t.type = reserved[t.value]
-    return t
-
-def t_NAME(t):
-    r'[a-zA-Z_]+'
-    if t.value in reserved:
-        t.type = reserved[t.value]
+def t_BIRTHDAY(t):
+    r'([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}'
     return t
 
 def t_SSN(t):
     r'[0-9]{4}'
     return t
 
+def t_ID(t):
+    r'[0-9][a-zA-Z0-9\-]+'
+    return t
+
 def t_DIGIT(t):
     r'[0-9]'
     return t
+
+
+def t_NAME(t):
+    r'((Dr|Mrs?|Ms)\.)?[A-Za-z]([A-Za-z](\s|\.)?)+[a-zA-Z]*'
+    if t.value in reserved:
+        t.type = reserved[t.value]
+    return t
+
+
+
+
+
 
 # Error
 def t_error(t):
