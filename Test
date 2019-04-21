@@ -1,4 +1,4 @@
-create protocols gsw:
+create_protocols gsw:
 
 protocols:
 	gsw

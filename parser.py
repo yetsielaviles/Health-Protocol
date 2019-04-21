@@ -32,14 +32,11 @@ def p_birthday(p):
 def p_availability(p):
     'availability : AVAILABILITY'
 
-# def p_create(p):
-#     'create : CREATE PROTOCOLS name COLON'
+# def p_expression_create(p):
+#     'expression : CREATE name COLON'
 #
-# def p_protocols(p):
-#     'protocols : PROTOCOLS COLON'
-#
-# def p_beds(p):
-#     'beds : BEDS COLON'
+# def p_expression_protocols(p):
+#     'expression : PROTOCOLS COLON'
 
 # def p_bed(p):
 #     'bed : BEDS LP DIGIT RP'
