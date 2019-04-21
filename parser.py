@@ -6,8 +6,8 @@ from lexer import tokens
 def p_expression(p):
     ''' expression : CREATE name COLON
                    | PROTOCOLS COLON
-                   | beds
-                   | BEDS LP DIGIT RP
+                   | BEDS COLON
+                   | BEDS LP DIGIT RP COLON
                    | DOCTORS LP availability RP COLON
                    | DOCTORS COLON
                    | SERVICES COLON
@@ -38,9 +38,9 @@ def p_availability(p):
 # def p_protocols(p):
 #     'protocols : PROTOCOLS COLON'
 #
-def p_beds(p):
-    'beds : BEDS COLON'
-#
+# def p_beds(p):
+#     'beds : BEDS COLON'
+
 # def p_bed(p):
 #     'bed : BEDS LP DIGIT RP'
 #
@@ -61,7 +61,7 @@ def p_beds(p):
 
 # Error rule for syntax errors
 def p_error(p):
-    print("Syntax error in input!")
+    print("Syntax error at ’%s’" % p)
 
 # Build parser
 parser = yacc.yacc()
