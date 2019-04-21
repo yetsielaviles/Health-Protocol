@@ -55,24 +55,22 @@ def t_SSN(t):
     r'[0-9]{4}'
     return t
 
-def t_ID(t):
-    r'[0-9][a-zA-Z0-9\-]+'
-    return t
-
-def t_DIGIT(t):
-    r'[0-9]'
-    return t
-
 def t_NAME(t):
     r'((Dr|Mrs?|Ms)\.)?[A-Za-z]([A-Za-z](\s|\.|\_)?)+[a-zA-Z]*'
     if t.value in reserved:
         t.type = reserved[t.value]
     return t
 
+def t_ID(t):
+    r'[0-9a-zA-Z][a-zA-Z0-9\-]+'
+    return t
+
+def t_DIGIT(t):
+    r'[0-9]'
+    return t
+
 # t_OPERATOR = "'.-/"
 literals = ".-'"  # operators
-
-
 
 
 # Error
@@ -104,4 +102,3 @@ def fileRead():
 
 
 fileRead()
-

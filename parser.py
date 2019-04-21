@@ -12,9 +12,9 @@ def p_expression(p):
                    | DOCTORS COLON
                    | SERVICES COLON
                    | INFO LP id RP COLON
-                   | ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP
-                   | ADDPATIENT LP name COMMA birthday COMMA ssn COMMA name COMMA id RP
-                   | UPDATE LP id COMMA AVAILABILITY RP
+                   | ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON
+                   | ADDPATIENT LP name COMMA birthday COMMA ssn COMMA name COMMA id RP COLON
+                   | UPDATE LP id COMMA AVAILABILITY RP COLON
     '''
 
 def p_id(p):
