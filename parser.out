@@ -5,9 +5,7 @@ Unused terminals:
     ASSIGN
     AVAILABLE
     CHARACTER
-    NEWLINE
     OPERATOR
-    WHITESPACE
 
 Grammar
 
@@ -48,14 +46,12 @@ ID                   : 12
 INFO                 : 8
 LP                   : 4 5 8 9 10 11
 NAME                 : 13
-NEWLINE              : 
 OPERATOR             : 
 PROTOCOLS            : 2
 RP                   : 4 5 8 9 10 11
 SERVICES             : 7
 SSN                  : 14
 UPDATE               : 11
-WHITESPACE           : 
 error                : 
 
 Nonterminals, with rules where they appear

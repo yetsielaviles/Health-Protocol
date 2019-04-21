@@ -8,14 +8,12 @@ tokens = ['CHARACTER',
           'RP',
           'COLON',
           'COMMA',
-          'ASSIGN',     # EQUAL IN DOCUMENTATION
+          'ASSIGN',
           'ID',
           'NAME',
           'BIRTHDAY',
           'SSN',
-          'AVAILABILITY',
-          'NEWLINE',
-          'WHITESPACE']
+          'AVAILABILITY']
 
 reserved = {
     'create_protocol': 'CREATE',
