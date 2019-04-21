@@ -1,4 +1,4 @@
-create_protocols gsw:
+create_protocol(Protocol name= gsw)
 
 protocols:
 	gsw

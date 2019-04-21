@@ -25,7 +25,7 @@ def p_availability(p):
 #     'expression : PROTOCOLS COLON'
 
 def p_expression(p):
-    ''' expression : CREATE name COLON
+    ''' expression : CREATE _ PROTOCOLS LP name RP
                    | PROTOCOLS COLON
                    | BEDS COLON
                    | BEDS LP DIGIT RP
@@ -34,6 +34,7 @@ def p_expression(p):
                    | SERVICES COLON
                    | INFO LP ID RP COLON
                    | UPDATE LP ID COMMA AVAILABILITY RP
+                   | ADDDOCTOR LP
     '''
 
 

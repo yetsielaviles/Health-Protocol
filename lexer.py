@@ -18,7 +18,7 @@ tokens = ['CHARACTER',
           'WHITESPACE']
 
 reserved = {
-    'create': 'CREATE',
+    'create_protocol': 'CREATE',
     'protocols': 'PROTOCOLS',
     'beds': 'BEDS',
     'doctors': 'DOCTORS',
@@ -41,8 +41,7 @@ t_RP = r'\)'
 t_COLON = r':'
 t_COMMA = r','
 t_ASSIGN = r'='
-# t_OPERATOR = "'.-/"
-literals = ".-'"  # operators
+
 
 def t_AVAILABILITY(t):
     r'Yes|No|yes|no'
@@ -64,14 +63,14 @@ def t_DIGIT(t):
     r'[0-9]'
     return t
 
-
 def t_NAME(t):
-    r'((Dr|Mrs?|Ms)\.)?[A-Za-z]([A-Za-z](\s|\.)?)+[a-zA-Z]*'
+    r'((Dr|Mrs?|Ms)\.)?[A-Za-z]([A-Za-z](\s|\.|\_)?)+[a-zA-Z]*'
     if t.value in reserved:
         t.type = reserved[t.value]
     return t
 
-
+# t_OPERATOR = "'.-/"
+literals = ".-'"  # operators
 
 
 
