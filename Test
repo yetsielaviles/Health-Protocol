@@ -1,14 +1,14 @@
-create_protocols gsw:
+create protocols gsw:
 
 protocols:
 	gsw
 	heart attack
 	broken bone
 
-addDoctor(Name=Dr.Jose Gonzales, Date of birth= 23/01/1968, Social Security Number= 9999, Availability=Yes, Identifier=1A)
+addDoctor(Dr.Jose Gonzales, 23/01/1968, 9999, Yes, 1A)
 
-addPatient((Name=Juan Del Pueblo, Date of birth= 28/08/1987, Social Security Number= 0123, Protocol=broken bone, Identifier=1B)
-	
+addPatient(Juan Del Pueblo, 28/08/1987, 0123, broken bone, 1B)
+
 beds:
 	121-A
 	345-B
