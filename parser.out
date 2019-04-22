@@ -2,8 +2,6 @@ Created by PLY version 3.11 (http://www.dabeaz.com/ply)
 
 Unused terminals:
 
-    ADDDOCTOR
-    ADDPATIENT
     ASSIGN
     CHARACTER
     OPERATOR
@@ -20,8 +18,8 @@ Rule 6     expression -> DOCTORS COLON
 Rule 7     expression -> SERVICES COLON
 Rule 8     expression -> INFO LP ID RP COLON
 Rule 9     expression -> UPDATE LP ID COMMA AVAILABILITY RP
-Rule 10    expression -> LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON
-Rule 11    expression -> LP name COMMA birthday COMMA ssn COMMA name COMMA id RP COLON
+Rule 10    expression -> ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON
+Rule 11    expression -> ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON
 Rule 12    id -> ID
 Rule 13    name -> NAME
 Rule 14    ssn -> SSN
@@ -30,8 +28,8 @@ Rule 16    availability -> AVAILABILITY
 
 Terminals, with rules where they appear
 
-ADDDOCTOR            : 
-ADDPATIENT           : 
+ADDDOCTOR            : 10
+ADDPATIENT           : 11
 ASSIGN               : 
 AVAILABILITY         : 9 16
 AVAILABLE            : 5
@@ -48,6 +46,7 @@ INFO                 : 8
 LP                   : 3 5 8 9 10 11
 NAME                 : 13
 OPERATOR             : 
+PROTOCOL             : 11
 PROTOCOLS            : 2
 RP                   : 3 5 8 9 10 11
 SERVICES             : 7
@@ -61,7 +60,7 @@ availability         : 10
 birthday             : 10 11
 expression           : 0
 id                   : 10 11
-name                 : 1 10 11 11
+name                 : 1 10 11
 ssn                  : 10 11
 
 Parsing method: LALR
@@ -78,17 +77,18 @@ state 0
     (7) expression -> . SERVICES COLON
     (8) expression -> . INFO LP ID RP COLON
     (9) expression -> . UPDATE LP ID COMMA AVAILABILITY RP
-    (10) expression -> . LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON
-    (11) expression -> . LP name COMMA birthday COMMA ssn COMMA name COMMA id RP COLON
+    (10) expression -> . ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON
+    (11) expression -> . ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON
 
     CREATE          shift and go to state 2
     PROTOCOLS       shift and go to state 3
     BEDS            shift and go to state 4
-    DOCTORS         shift and go to state 6
-    SERVICES        shift and go to state 7
-    INFO            shift and go to state 8
-    UPDATE          shift and go to state 9
-    LP              shift and go to state 5
+    DOCTORS         shift and go to state 5
+    SERVICES        shift and go to state 6
+    INFO            shift and go to state 7
+    UPDATE          shift and go to state 8
+    ADDDOCTOR       shift and go to state 9
+    ADDPATIENT      shift and go to state 10
 
     expression                     shift and go to state 1
 
@@ -103,15 +103,15 @@ state 2
     (1) expression -> CREATE . name COLON
     (13) name -> . NAME
 
-    NAME            shift and go to state 11
+    NAME            shift and go to state 12
 
-    name                           shift and go to state 10
+    name                           shift and go to state 11
 
 state 3
 
     (2) expression -> PROTOCOLS . COLON
 
-    COLON           shift and go to state 12
+    COLON           shift and go to state 13
 
 
 state 4
@@ -119,21 +119,11 @@ state 4
     (3) expression -> BEDS . LP DIGIT RP COLON
     (4) expression -> BEDS . COLON
 
-    LP              shift and go to state 13
-    COLON           shift and go to state 14
+    LP              shift and go to state 14
+    COLON           shift and go to state 15
 
 
 state 5
-
-    (10) expression -> LP . name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON
-    (11) expression -> LP . name COMMA birthday COMMA ssn COMMA name COMMA id RP COLON
-    (13) name -> . NAME
-
-    NAME            shift and go to state 11
-
-    name                           shift and go to state 15
-
-state 6
 
     (5) expression -> DOCTORS . LP AVAILABLE RP COLON
     (6) expression -> DOCTORS . COLON
@@ -142,35 +132,49 @@ state 6
     COLON           shift and go to state 17
 
 
-state 7
+state 6
 
     (7) expression -> SERVICES . COLON
 
     COLON           shift and go to state 18
 
 
-state 8
+state 7
 
     (8) expression -> INFO . LP ID RP COLON
 
     LP              shift and go to state 19
 
 
-state 9
+state 8
 
     (9) expression -> UPDATE . LP ID COMMA AVAILABILITY RP
 
     LP              shift and go to state 20
 
 
+state 9
+
+    (10) expression -> ADDDOCTOR . LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON
+
+    LP              shift and go to state 21
+
+
 state 10
 
-    (1) expression -> CREATE name . COLON
+    (11) expression -> ADDPATIENT . LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON
 
-    COLON           shift and go to state 21
+    LP              shift and go to state 22
 
 
 state 11
+
+    (1) expression -> CREATE name . COLON
+
+    COLON           shift and go to state 23
+
+
+state 12
 
     (13) name -> NAME .
 
@@ -178,40 +182,32 @@ state 11
     COMMA           reduce using rule 13 (name -> NAME .)
 
 
-state 12
+state 13
 
     (2) expression -> PROTOCOLS COLON .
 
     $end            reduce using rule 2 (expression -> PROTOCOLS COLON .)
 
 
-state 13
+state 14
 
     (3) expression -> BEDS LP . DIGIT RP COLON
 
-    DIGIT           shift and go to state 22
+    DIGIT           shift and go to state 24
 
 
-state 14
+state 15
 
     (4) expression -> BEDS COLON .
 
     $end            reduce using rule 4 (expression -> BEDS COLON .)
 
 
-state 15
-
-    (10) expression -> LP name . COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON
-    (11) expression -> LP name . COMMA birthday COMMA ssn COMMA name COMMA id RP COLON
-
-    COMMA           shift and go to state 23
-
-
 state 16
 
     (5) expression -> DOCTORS LP . AVAILABLE RP COLON
 
-    AVAILABLE       shift and go to state 24
+    AVAILABLE       shift and go to state 25
 
 
 state 17
@@ -232,261 +228,324 @@ state 19
 
     (8) expression -> INFO LP . ID RP COLON
 
-    ID              shift and go to state 25
+    ID              shift and go to state 26
 
 
 state 20
 
     (9) expression -> UPDATE LP . ID COMMA AVAILABILITY RP
 
-    ID              shift and go to state 26
+    ID              shift and go to state 27
 
 
 state 21
+
+    (10) expression -> ADDDOCTOR LP . name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON
+    (13) name -> . NAME
+
+    NAME            shift and go to state 12
+
+    name                           shift and go to state 28
+
+state 22
+
+    (11) expression -> ADDPATIENT LP . name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON
+    (13) name -> . NAME
+
+    NAME            shift and go to state 12
+
+    name                           shift and go to state 29
+
+state 23
 
     (1) expression -> CREATE name COLON .
 
     $end            reduce using rule 1 (expression -> CREATE name COLON .)
 
 
-state 22
-
-    (3) expression -> BEDS LP DIGIT . RP COLON
-
-    RP              shift and go to state 27
-
-
-state 23
-
-    (10) expression -> LP name COMMA . birthday COMMA ssn COMMA availability COMMA id RP COLON
-    (11) expression -> LP name COMMA . birthday COMMA ssn COMMA name COMMA id RP COLON
-    (15) birthday -> . BIRTHDAY
-
-    BIRTHDAY        shift and go to state 29
-
-    birthday                       shift and go to state 28
-
 state 24
 
-    (5) expression -> DOCTORS LP AVAILABLE . RP COLON
+    (3) expression -> BEDS LP DIGIT . RP COLON
 
     RP              shift and go to state 30
 
 
 state 25
 
-    (8) expression -> INFO LP ID . RP COLON
+    (5) expression -> DOCTORS LP AVAILABLE . RP COLON
 
     RP              shift and go to state 31
 
 
 state 26
 
-    (9) expression -> UPDATE LP ID . COMMA AVAILABILITY RP
+    (8) expression -> INFO LP ID . RP COLON
 
-    COMMA           shift and go to state 32
+    RP              shift and go to state 32
 
 
 state 27
 
-    (3) expression -> BEDS LP DIGIT RP . COLON
+    (9) expression -> UPDATE LP ID . COMMA AVAILABILITY RP
 
-    COLON           shift and go to state 33
+    COMMA           shift and go to state 33
 
 
 state 28
 
-    (10) expression -> LP name COMMA birthday . COMMA ssn COMMA availability COMMA id RP COLON
-    (11) expression -> LP name COMMA birthday . COMMA ssn COMMA name COMMA id RP COLON
+    (10) expression -> ADDDOCTOR LP name . COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON
 
     COMMA           shift and go to state 34
 
 
 state 29
 
-    (15) birthday -> BIRTHDAY .
+    (11) expression -> ADDPATIENT LP name . COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON
 
-    COMMA           reduce using rule 15 (birthday -> BIRTHDAY .)
+    COMMA           shift and go to state 35
 
 
 state 30
 
-    (5) expression -> DOCTORS LP AVAILABLE RP . COLON
-
-    COLON           shift and go to state 35
-
-
-state 31
-
-    (8) expression -> INFO LP ID RP . COLON
+    (3) expression -> BEDS LP DIGIT RP . COLON
 
     COLON           shift and go to state 36
 
 
+state 31
+
+    (5) expression -> DOCTORS LP AVAILABLE RP . COLON
+
+    COLON           shift and go to state 37
+
+
 state 32
 
-    (9) expression -> UPDATE LP ID COMMA . AVAILABILITY RP
+    (8) expression -> INFO LP ID RP . COLON
 
-    AVAILABILITY    shift and go to state 37
+    COLON           shift and go to state 38
 
 
 state 33
+
+    (9) expression -> UPDATE LP ID COMMA . AVAILABILITY RP
+
+    AVAILABILITY    shift and go to state 39
+
+
+state 34
+
+    (10) expression -> ADDDOCTOR LP name COMMA . birthday COMMA ssn COMMA availability COMMA id RP COLON
+    (15) birthday -> . BIRTHDAY
+
+    BIRTHDAY        shift and go to state 41
+
+    birthday                       shift and go to state 40
+
+state 35
+
+    (11) expression -> ADDPATIENT LP name COMMA . birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON
+    (15) birthday -> . BIRTHDAY
+
+    BIRTHDAY        shift and go to state 41
+
+    birthday                       shift and go to state 42
+
+state 36
 
     (3) expression -> BEDS LP DIGIT RP COLON .
 
     $end            reduce using rule 3 (expression -> BEDS LP DIGIT RP COLON .)
 
 
-state 34
-
-    (10) expression -> LP name COMMA birthday COMMA . ssn COMMA availability COMMA id RP COLON
-    (11) expression -> LP name COMMA birthday COMMA . ssn COMMA name COMMA id RP COLON
-    (14) ssn -> . SSN
-
-    SSN             shift and go to state 39
-
-    ssn                            shift and go to state 38
-
-state 35
+state 37
 
     (5) expression -> DOCTORS LP AVAILABLE RP COLON .
 
     $end            reduce using rule 5 (expression -> DOCTORS LP AVAILABLE RP COLON .)
 
 
-state 36
+state 38
 
     (8) expression -> INFO LP ID RP COLON .
 
     $end            reduce using rule 8 (expression -> INFO LP ID RP COLON .)
 
 
-state 37
+state 39
 
     (9) expression -> UPDATE LP ID COMMA AVAILABILITY . RP
 
-    RP              shift and go to state 40
-
-
-state 38
-
-    (10) expression -> LP name COMMA birthday COMMA ssn . COMMA availability COMMA id RP COLON
-    (11) expression -> LP name COMMA birthday COMMA ssn . COMMA name COMMA id RP COLON
-
-    COMMA           shift and go to state 41
-
-
-state 39
-
-    (14) ssn -> SSN .
-
-    COMMA           reduce using rule 14 (ssn -> SSN .)
+    RP              shift and go to state 43
 
 
 state 40
 
-    (9) expression -> UPDATE LP ID COMMA AVAILABILITY RP .
+    (10) expression -> ADDDOCTOR LP name COMMA birthday . COMMA ssn COMMA availability COMMA id RP COLON
 
-    $end            reduce using rule 9 (expression -> UPDATE LP ID COMMA AVAILABILITY RP .)
+    COMMA           shift and go to state 44
 
 
 state 41
 
-    (10) expression -> LP name COMMA birthday COMMA ssn COMMA . availability COMMA id RP COLON
-    (11) expression -> LP name COMMA birthday COMMA ssn COMMA . name COMMA id RP COLON
-    (16) availability -> . AVAILABILITY
-    (13) name -> . NAME
+    (15) birthday -> BIRTHDAY .
 
-    AVAILABILITY    shift and go to state 44
-    NAME            shift and go to state 11
+    COMMA           reduce using rule 15 (birthday -> BIRTHDAY .)
 
-    name                           shift and go to state 42
-    availability                   shift and go to state 43
 
 state 42
 
-    (11) expression -> LP name COMMA birthday COMMA ssn COMMA name . COMMA id RP COLON
+    (11) expression -> ADDPATIENT LP name COMMA birthday . COMMA ssn COMMA PROTOCOL COMMA id RP COLON
 
     COMMA           shift and go to state 45
 
 
 state 43
 
-    (10) expression -> LP name COMMA birthday COMMA ssn COMMA availability . COMMA id RP COLON
+    (9) expression -> UPDATE LP ID COMMA AVAILABILITY RP .
 
-    COMMA           shift and go to state 46
+    $end            reduce using rule 9 (expression -> UPDATE LP ID COMMA AVAILABILITY RP .)
 
 
 state 44
+
+    (10) expression -> ADDDOCTOR LP name COMMA birthday COMMA . ssn COMMA availability COMMA id RP COLON
+    (14) ssn -> . SSN
+
+    SSN             shift and go to state 47
+
+    ssn                            shift and go to state 46
+
+state 45
+
+    (11) expression -> ADDPATIENT LP name COMMA birthday COMMA . ssn COMMA PROTOCOL COMMA id RP COLON
+    (14) ssn -> . SSN
+
+    SSN             shift and go to state 47
+
+    ssn                            shift and go to state 48
+
+state 46
+
+    (10) expression -> ADDDOCTOR LP name COMMA birthday COMMA ssn . COMMA availability COMMA id RP COLON
+
+    COMMA           shift and go to state 49
+
+
+state 47
+
+    (14) ssn -> SSN .
+
+    COMMA           reduce using rule 14 (ssn -> SSN .)
+
+
+state 48
+
+    (11) expression -> ADDPATIENT LP name COMMA birthday COMMA ssn . COMMA PROTOCOL COMMA id RP COLON
+
+    COMMA           shift and go to state 50
+
+
+state 49
+
+    (10) expression -> ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA . availability COMMA id RP COLON
+    (16) availability -> . AVAILABILITY
+
+    AVAILABILITY    shift and go to state 52
+
+    availability                   shift and go to state 51
+
+state 50
+
+    (11) expression -> ADDPATIENT LP name COMMA birthday COMMA ssn COMMA . PROTOCOL COMMA id RP COLON
+
+    PROTOCOL        shift and go to state 53
+
+
+state 51
+
+    (10) expression -> ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability . COMMA id RP COLON
+
+    COMMA           shift and go to state 54
+
+
+state 52
 
     (16) availability -> AVAILABILITY .
 
     COMMA           reduce using rule 16 (availability -> AVAILABILITY .)
 
 
-state 45
+state 53
 
-    (11) expression -> LP name COMMA birthday COMMA ssn COMMA name COMMA . id RP COLON
+    (11) expression -> ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL . COMMA id RP COLON
+
+    COMMA           shift and go to state 55
+
+
+state 54
+
+    (10) expression -> ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA . id RP COLON
     (12) id -> . ID
 
-    ID              shift and go to state 48
+    ID              shift and go to state 57
 
-    id                             shift and go to state 47
+    id                             shift and go to state 56
 
-state 46
+state 55
 
-    (10) expression -> LP name COMMA birthday COMMA ssn COMMA availability COMMA . id RP COLON
+    (11) expression -> ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA . id RP COLON
     (12) id -> . ID
 
-    ID              shift and go to state 48
+    ID              shift and go to state 57
 
-    id                             shift and go to state 49
+    id                             shift and go to state 58
 
-state 47
+state 56
 
-    (11) expression -> LP name COMMA birthday COMMA ssn COMMA name COMMA id . RP COLON
+    (10) expression -> ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id . RP COLON
 
-    RP              shift and go to state 50
+    RP              shift and go to state 59
 
 
-state 48
+state 57
 
     (12) id -> ID .
 
     RP              reduce using rule 12 (id -> ID .)
 
 
-state 49
+state 58
 
-    (10) expression -> LP name COMMA birthday COMMA ssn COMMA availability COMMA id . RP COLON
+    (11) expression -> ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id . RP COLON
 
-    RP              shift and go to state 51
-
-
-state 50
-
-    (11) expression -> LP name COMMA birthday COMMA ssn COMMA name COMMA id RP . COLON
-
-    COLON           shift and go to state 52
+    RP              shift and go to state 60
 
 
-state 51
+state 59
 
-    (10) expression -> LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP . COLON
+    (10) expression -> ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP . COLON
 
-    COLON           shift and go to state 53
-
-
-state 52
-
-    (11) expression -> LP name COMMA birthday COMMA ssn COMMA name COMMA id RP COLON .
-
-    $end            reduce using rule 11 (expression -> LP name COMMA birthday COMMA ssn COMMA name COMMA id RP COLON .)
+    COLON           shift and go to state 61
 
 
-state 53
+state 60
 
-    (10) expression -> LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON .
+    (11) expression -> ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP . COLON
 
-    $end            reduce using rule 10 (expression -> LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON .)
+    COLON           shift and go to state 62
+
+
+state 61
+
+    (10) expression -> ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON .
+
+    $end            reduce using rule 10 (expression -> ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON .)
+
+
+state 62
+
+    (11) expression -> ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON .
+
+    $end            reduce using rule 11 (expression -> ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON .)
 

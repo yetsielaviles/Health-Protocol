@@ -14,7 +14,7 @@ from functions import Health
 #                    | SERVICES COLON
 #                    | INFO LP id RP COLON
 #                    | ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON
-#                    | ADDPATIENT LP name COMMA birthday COMMA ssn COMMA name COMMA id RP COLON
+#                    | ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON
 #                    | UPDATE LP id COMMA AVAILABILITY RP COLON
 #     '''
 
@@ -27,11 +27,13 @@ def p_expression_protocols(p):
 def p_expression_bed(p):
     'expression : BEDS LP DIGIT RP COLON'
     level = str(p[3])
+    print('Available beds at level ' + level)
     p = Health()
     print(p.get_bedsByLevel(level))
 
 def p_beds(p):
     'expression : BEDS COLON'
+    print('All available beds: ')
     p = Health()
     print(p.get_beds())
 
@@ -51,10 +53,10 @@ def p_expression_update(p):
     'expression : UPDATE LP ID COMMA AVAILABILITY RP'
 
 def p_addDoctor(p):
-    'expression : LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON'
+    'expression : ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON'
 
 def p_addPatient(p):
-    'expression : LP name COMMA birthday COMMA ssn COMMA name COMMA id RP COLON'
+    'expression : ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON'
 
 def p_id(p):
     'id : ID'

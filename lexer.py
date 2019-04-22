@@ -25,7 +25,10 @@ reserved = {
     'update': 'UPDATE',
     'addDoctor': 'ADDDOCTOR',
     'addPatient': 'ADDPATIENT',
-    'available': 'AVAILABLE'
+    'available': 'AVAILABLE',
+    'gsw': 'PROTOCOL',
+    'broken bone': 'PROTOCOL',
+    'heart attack': 'PROTOCOL'
 }
 
 tokens = tokens + list(reserved.values())
@@ -85,7 +88,7 @@ def fileRead():
     # read file
     # self.filename = filename
     file = open("Test", "r")
-    lines = file.readlines()
+    lines = file.read().splitlines()
     file.close()
 
     fileTokens = []
