@@ -13,7 +13,7 @@
     
 **Grammar**
     
-    Exp ::= Create NAME Colon 
+    Exp ::= Create LeftParenthesis NAME RightParenthesis Colon 
             | Protocols Colon
             | Beds Colon
             | Beds LeftParenthesis Digit RightParenthesis Colon
