@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'ADDDOCTOR ADDPATIENT ASSIGN AVAILABILITY AVAILABLE BEDS BIRTHDAY CHARACTER COLON COMMA CREATE DIGIT DOCTORS ID INFO LP NAME OPERATOR PROTOCOL PROTOCOL PROTOCOL PROTOCOLS RP SERVICES SSN UPDATEexpression : CREATE name COLONexpression : PROTOCOLS COLONexpression : BEDS LP DIGIT RP COLONexpression : BEDS COLONexpression : DOCTORS LP AVAILABLE RP COLONexpression : DOCTORS COLONexpression : SERVICES COLONexpression : INFO LP ID RP COLONexpression : UPDATE LP ID COMMA AVAILABILITY RPexpression : ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLONexpression : ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLONid : IDname : NAMEssn : SSNbirthday : BIRTHDAYavailability : AVAILABILITY'
+_lr_signature = 'ADDDOCTOR ADDPATIENT ASSIGN AVAILABILITY AVAILABLE BEDS BIRTHDAY CHARACTER COLON COMMA CREATE DIGIT DOCTORS ID INFO LP NAME OPERATOR PROTOCOL PROTOCOL PROTOCOL PROTOCOLS RP SERVICES SSN UPDATEexpression : CREATE LP NAME RP COLONexpression : PROTOCOLS COLONexpression : BEDS LP DIGIT RP COLONexpression : BEDS COLONexpression : DOCTORS LP AVAILABLE RP COLONexpression : DOCTORS COLONexpression : SERVICES COLONexpression : INFO LP ID RP COLONexpression : UPDATE LP ID COMMA AVAILABILITY RPexpression : ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLONexpression : ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLONid : IDname : NAMEssn : SSNbirthday : BIRTHDAYavailability : AVAILABILITY'
     
-_lr_action_items = {'CREATE':([0,],[2,]),'PROTOCOLS':([0,],[3,]),'BEDS':([0,],[4,]),'DOCTORS':([0,],[5,]),'SERVICES':([0,],[6,]),'INFO':([0,],[7,]),'UPDATE':([0,],[8,]),'ADDDOCTOR':([0,],[9,]),'ADDPATIENT':([0,],[10,]),'$end':([1,13,15,17,18,23,36,37,38,43,61,62,],[0,-2,-4,-6,-7,-1,-3,-5,-8,-9,-10,-11,]),'NAME':([2,21,22,],[12,12,12,]),'COLON':([3,4,5,6,11,12,30,31,32,59,60,],[13,15,17,18,23,-13,36,37,38,61,62,]),'LP':([4,5,7,8,9,10,],[14,16,19,20,21,22,]),'COMMA':([12,27,28,29,40,41,42,46,47,48,51,52,53,],[-13,33,34,35,44,-15,45,49,-14,50,54,-16,55,]),'DIGIT':([14,],[24,]),'AVAILABLE':([16,],[25,]),'ID':([19,20,54,55,],[26,27,57,57,]),'RP':([24,25,26,39,56,57,58,],[30,31,32,43,59,-12,60,]),'AVAILABILITY':([33,49,],[39,52,]),'BIRTHDAY':([34,35,],[41,41,]),'SSN':([44,45,],[47,47,]),'PROTOCOL':([50,],[53,]),}
+_lr_action_items = {'CREATE':([0,],[2,]),'PROTOCOLS':([0,],[3,]),'BEDS':([0,],[4,]),'DOCTORS':([0,],[5,]),'SERVICES':([0,],[6,]),'INFO':([0,],[7,]),'UPDATE':([0,],[8,]),'ADDDOCTOR':([0,],[9,]),'ADDPATIENT':([0,],[10,]),'$end':([1,12,14,16,17,37,38,39,40,45,63,64,],[0,-2,-4,-6,-7,-1,-3,-5,-8,-9,-10,-11,]),'LP':([2,4,5,7,8,9,10,],[11,13,15,18,19,20,21,]),'COLON':([3,4,5,6,30,31,32,33,61,62,],[12,14,16,17,37,38,39,40,63,64,]),'NAME':([11,20,21,],[22,28,28,]),'DIGIT':([13,],[23,]),'AVAILABLE':([15,],[24,]),'ID':([18,19,56,57,],[25,26,59,59,]),'RP':([22,23,24,25,41,58,59,60,],[30,31,32,33,45,61,-12,62,]),'COMMA':([26,27,28,29,42,43,44,48,49,50,53,54,55,],[34,35,-13,36,46,-15,47,51,-14,52,56,-16,57,]),'AVAILABILITY':([34,51,],[41,54,]),'BIRTHDAY':([35,36,],[43,43,]),'SSN':([46,47,],[49,49,]),'PROTOCOL':([52,],[55,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'expression':([0,],[1,]),'name':([2,21,22,],[11,28,29,]),'birthday':([34,35,],[40,42,]),'ssn':([44,45,],[46,48,]),'availability':([49,],[51,]),'id':([54,55,],[56,58,]),}
+_lr_goto_items = {'expression':([0,],[1,]),'name':([20,21,],[27,29,]),'birthday':([35,36,],[42,44,]),'ssn':([46,47,],[48,50,]),'availability':([51,],[53,]),'id':([56,57,],[58,60,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -27,20 +27,20 @@ for _k, _v in _lr_goto_items.items():
 del _lr_goto_items
 _lr_productions = [
   ("S' -> expression","S'",1,None,None,None),
-  ('expression -> CREATE name COLON','expression',3,'p_expression_create','parser.py',22),
-  ('expression -> PROTOCOLS COLON','expression',2,'p_expression_protocols','parser.py',25),
-  ('expression -> BEDS LP DIGIT RP COLON','expression',5,'p_expression_bed','parser.py',28),
-  ('expression -> BEDS COLON','expression',2,'p_beds','parser.py',35),
-  ('expression -> DOCTORS LP AVAILABLE RP COLON','expression',5,'p_available_doctors','parser.py',41),
-  ('expression -> DOCTORS COLON','expression',2,'p_expression_doctors','parser.py',44),
-  ('expression -> SERVICES COLON','expression',2,'p_expression_services','parser.py',47),
-  ('expression -> INFO LP ID RP COLON','expression',5,'p_expression_info','parser.py',50),
-  ('expression -> UPDATE LP ID COMMA AVAILABILITY RP','expression',6,'p_expression_update','parser.py',53),
-  ('expression -> ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON','expression',13,'p_addDoctor','parser.py',56),
-  ('expression -> ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON','expression',13,'p_addPatient','parser.py',59),
-  ('id -> ID','id',1,'p_id','parser.py',62),
-  ('name -> NAME','name',1,'p_name','parser.py',65),
-  ('ssn -> SSN','ssn',1,'p_ssn','parser.py',68),
-  ('birthday -> BIRTHDAY','birthday',1,'p_birthday','parser.py',71),
-  ('availability -> AVAILABILITY','availability',1,'p_availability','parser.py',74),
+  ('expression -> CREATE LP NAME RP COLON','expression',5,'p_expression_create','parser.py',22),
+  ('expression -> PROTOCOLS COLON','expression',2,'p_expression_protocols','parser.py',28),
+  ('expression -> BEDS LP DIGIT RP COLON','expression',5,'p_expression_bed','parser.py',34),
+  ('expression -> BEDS COLON','expression',2,'p_beds','parser.py',41),
+  ('expression -> DOCTORS LP AVAILABLE RP COLON','expression',5,'p_available_doctors','parser.py',47),
+  ('expression -> DOCTORS COLON','expression',2,'p_expression_doctors','parser.py',50),
+  ('expression -> SERVICES COLON','expression',2,'p_expression_services','parser.py',53),
+  ('expression -> INFO LP ID RP COLON','expression',5,'p_expression_info','parser.py',56),
+  ('expression -> UPDATE LP ID COMMA AVAILABILITY RP','expression',6,'p_expression_update','parser.py',59),
+  ('expression -> ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON','expression',13,'p_addDoctor','parser.py',62),
+  ('expression -> ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON','expression',13,'p_addPatient','parser.py',65),
+  ('id -> ID','id',1,'p_id','parser.py',68),
+  ('name -> NAME','name',1,'p_name','parser.py',71),
+  ('ssn -> SSN','ssn',1,'p_ssn','parser.py',74),
+  ('birthday -> BIRTHDAY','birthday',1,'p_birthday','parser.py',77),
+  ('availability -> AVAILABILITY','availability',1,'p_availability','parser.py',80),
 ]

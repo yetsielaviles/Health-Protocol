@@ -19,10 +19,16 @@ from functions import Health
 #     '''
 
 def p_expression_create(p):
-    'expression : CREATE name COLON'
+    'expression : CREATE LP NAME RP COLON'
+    protocol = p[3]
+    p = Health()
+    print(p.add_protocol(protocol))
 
 def p_expression_protocols(p):
     'expression : PROTOCOLS COLON'
+    print('All protocols to date:')
+    p = Health()
+    print(p.get_protocols())
 
 def p_expression_bed(p):
     'expression : BEDS LP DIGIT RP COLON'
