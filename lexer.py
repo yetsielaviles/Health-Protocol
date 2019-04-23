@@ -87,19 +87,16 @@ lexer = lex.lex()
 # Testing
 def fileRead():
     # read file
-    # self.filename = filename
     file = open("Test", "r")
     lines = file.read().splitlines()
     file.close()
 
     fileTokens = []
     for line in lines:
-        # fileTokens += line
         lexer.input(line)
         for tok in lexer:
             print(tok)
             fileTokens.append(tok)
-    # print(fileTokens)
     return fileTokens
 
 

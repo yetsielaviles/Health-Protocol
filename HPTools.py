@@ -1,41 +1,6 @@
-import json
-
-class Doctor:
-    def __init__(self, name, dob, ssn, availability, did):
-        self.name = name
-        self.dob = dob
-        self.ssn = ssn
-        self.availability = availability
-        self.did = did
-# --------------------------------------------------------------------
-class Patient:
-    def __init__(self, name, dob, ssn, protocol, pid):
-        self.name = name
-        self.dob = dob
-        self.ssn = ssn
-        self.protocol = protocol
-        self.pid = pid
-# ------------------------------------------------------------------------
-#Doctors dictionary
-doctors = {
-    '1A': dict(Name="Dr. Jose Gonzales", Date_Of_Birth="23/01/1968", SSN=9999, Availability=True),
-    '1C': dict(Name="Dr. Pedro Rivera", Date_Of_Birth="24/10/1968", SSN=6666, Availability=False)
-}
-#Patient dictionary
-patients = {
-    '1B': dict(Name="Juan Del Pueblo", Date_Of_Birth="28/08/1987", SSN=6667, Protocol="broken bone")
-}
-
-beds = ['121-A', '345-B', '234', '134', 'ICU-2']
-services = ['injections', 'medication', 'ER', 'blood sample']
-protocols = ['gsw', 'broken bone', 'heart attack', 'head injury', 'flu']
+from testing.tests import doctors, patients, beds, services, protocols
 
 class Health:
-    # def __init__(self, doctors, patients, beds, protocols):
-    #     self.doctors = doctors
-    #     self.patients = patients
-    #     self.beds = beds
-    #     self.protocols = protocols
 
     def get_beds(self):
         global beds
@@ -54,7 +19,6 @@ class Health:
         return patients
 
     def addDoctor(self, name, dob, ssn, availability, did):
-        #doctors[did] = [name, dob, ssn, availability]
         doctors.update({did: dict(Name=name, Date_Of_Birth=dob, SSN=ssn, Availability=availability)})
         return doctors
 
@@ -81,12 +45,12 @@ class Health:
                 print(doctor['Name'])
 
     def updateDoctor(self, did, avail):
-        #Checking if Identification is in the dict
+        # Checking if Identification is in the dict
         if did in doctors.keys():
             doctors[did]['Availability'] = avail
             print(doctors[did])
         else:
-            #Id is not in dictionary
+            # Id is not in dictionary
             print("Doctor identification not found!")
 
     def get_protocols(self):

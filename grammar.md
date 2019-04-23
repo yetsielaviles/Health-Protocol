@@ -19,6 +19,7 @@
             | Beds LeftParenthesis Digit RightParenthesis Colon
             | Doctors  LeftParenthesis AVAILABLE RightParenthesis Colon
             | Doctors Colon
+            | Patients Colon
             | Services Colon
             | Info LeftParenthesis ID RightParenthesis Colon
             | AddDoctor LeftParenthesis NAME Comma BIRTHDATE Comma SSN Comma AVAILABILITY Comma ID RightParenthesis Colon
