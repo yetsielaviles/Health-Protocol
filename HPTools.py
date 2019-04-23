@@ -41,7 +41,7 @@ class Health:
 
     def get_DoctorsAvailable(self):
         for key, doctor in doctors.items():
-            if doctor['Availability'] == 'True':
+            if doctor['Availability']:
                 print(doctor['Name'])
 
     def updateDoctor(self, did, avail):

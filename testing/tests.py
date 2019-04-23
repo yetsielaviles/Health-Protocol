@@ -1,7 +1,7 @@
 #Doctors dictionary
 doctors = {
-    '1A': dict(Name="Dr. Jose Gonzales", Date_Of_Birth="23/01/1968", SSN=9999, Availability='True'),
-    '1C': dict(Name="Dr. Pedro Rivera", Date_Of_Birth="24/10/1968", SSN=6666, Availability='False')
+    '1A': dict(Name="Dr. Jose Gonzales", Date_Of_Birth="23/01/1968", SSN=9999, Availability=True),
+    '1C': dict(Name="Dr. Pedro Rivera", Date_Of_Birth="24/10/1968", SSN=6666, Availability=False)
 }
 #Patient dictionary
 patients = {
