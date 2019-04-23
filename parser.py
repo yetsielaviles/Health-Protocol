@@ -1,6 +1,6 @@
 import ply.yacc as yacc
 from lexer import tokens
-from functions import Health
+#from functions import Health
 from HPTools import Health
 
 # Defining parser rules
@@ -82,10 +82,24 @@ def p_expression_update(p):
          print("Availability must be Yes or No")
 
 def p_addDoctor(p):
-    'expression : ADDDOCTOR LP name COMMA birthday COMMA ssn COMMA availability COMMA id RP COLON'
+    'expression : ADDDOCTOR LP NAME COMMA BIRTHDAY COMMA SSN COMMA AVAILABILITY COMMA ID RP COLON'
+    name = str(p[3])
+    birthday = str(p[5])
+    ssn = str(p[7])
+    availability = str(p[9])
+    id = str(p[11])
+    p = Health()
+    print(p.addDoctor(name, birthday, ssn, availability, id))
 
 def p_addPatient(p):
-    'expression : ADDPATIENT LP name COMMA birthday COMMA ssn COMMA PROTOCOL COMMA id RP COLON'
+    'expression : ADDPATIENT LP NAME COMMA BIRTHDAY COMMA SSN COMMA PROTOCOL COMMA ID RP COLON'
+    name = str(p[3])
+    birthday = str(p[5])
+    ssn = str(p[7])
+    protocol = str(p[9])
+    id = str(p[11])
+    p = Health()
+    print(p.addPatient(name, birthday, ssn, protocol, id))
 
 def p_id(p):
     'id : ID'

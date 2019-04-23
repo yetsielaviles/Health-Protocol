@@ -1,3 +1,5 @@
+import json
+
 class Doctor:
     def __init__(self, name, dob, ssn, availability, did):
         self.name = name
@@ -48,10 +50,13 @@ class Health:
         return result
 
     def addPatient(self, name, dob, ssn, protocol, pid):
-        pass
+        patients.update({pid: dict(Name=name, Date_Of_Birth=dob, SSN=ssn, Protocol=protocol)})
+        return patients
 
     def addDoctor(self, name, dob, ssn, availability, did):
-        pass
+        #doctors[did] = [name, dob, ssn, availability]
+        doctors.update({did: dict(Name=name, Date_Of_Birth=dob, SSN=ssn, Availability=availability)})
+        return doctors
 
     def get_services(self):
         global services

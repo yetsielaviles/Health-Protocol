@@ -45,7 +45,7 @@ t_ASSIGN = r'='
 
 
 def t_AVAILABILITY(t):
-    r'Yes|No|yes|no'
+    r'True|False|true|false'
     return t
 
 def t_BIRTHDAY(t):
