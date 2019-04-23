@@ -20,6 +20,7 @@ reserved = {
     'protocols': 'PROTOCOLS',
     'beds': 'BEDS',
     'doctors': 'DOCTORS',
+    'patients': 'PATIENTS',
     'services': 'SERVICES',
     'info': 'INFO',
     'update': 'UPDATE',

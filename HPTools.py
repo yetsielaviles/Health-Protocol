@@ -67,6 +67,10 @@ class Health:
             print(doctors[key]['Name'])
        # print("Id of doctor not found")
 
+    def get_Patients(self):
+        for key in patients.keys():
+            print(patients[key]['Name'])
+
     def get_DoctorByID(self, did):
         if did in doctors.keys():
              print(doctors[did])

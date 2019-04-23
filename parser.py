@@ -56,6 +56,12 @@ def p_expression_doctors(p):
     p = Health()
     print(p.get_Doctors())
 
+def p_expression_patients(p):
+    'expression : PATIENTS COLON'
+    print('Patients: ')
+    p = Health()
+    print(p.get_Patients())
+
 def p_expression_services(p):
     'expression : SERVICES COLON'
     print('All services to date:')
