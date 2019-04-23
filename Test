@@ -5,7 +5,7 @@ protocols:
 	heart attack
 	broken bone
 
-addDoctor(Dr.Jose Gonzales, 23/01/1968, 9999, Yes, 1A):
+addDoctor(Dr.Jose Gonzales, 23/01/1968, 9999, True, 1A):
 
 addPatient(Juan Del Pueblo, 28/08/1987, 0123, broken bone, 1B):
 
@@ -37,11 +37,11 @@ services:
 	blood sample
 
 
-update(1A, No):
+update(1A, False):
 
 info(1A):
 	Dr.Jose Gonzales
 	23/01/1968
 	9999
-	No
+	False
 	1A
