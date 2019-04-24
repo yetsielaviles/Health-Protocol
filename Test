@@ -5,7 +5,7 @@ protocols:
 	heart attack
 	broken bone
 
-addDoctor(Dr.Jose Gonzales, 23/01/1968, 9999, True, 1A):
+addDoctor(Dr. Jose Gonzales, 23/01/1968, 9999, Yes, 1A):
 
 addPatient(Juan Del Pueblo, 28/08/1987, 0123, broken bone, 1B):
 
@@ -23,12 +23,12 @@ beds(3):
 	301-B
 	
 doctors:
-	Dr.Pedro Alvarado
-	Dr.Juan Rodriguez
+	Dr. Pedro Alvarado
+	Dr. Juan Rodriguez
 
 doctors(AVAILABLE):
-	Dr.Jose Gonzalez
-	Dra.Ana Crespo
+	Dr. Jose Gonzalez
+	Dra. Ana Crespo
 	
 services:
 	injections
@@ -40,7 +40,7 @@ services:
 update(1A, False):
 
 info(1A):
-	Dr.Jose Gonzales
+	Dr. Jose Gonzales
 	23/01/1968
 	9999
 	False

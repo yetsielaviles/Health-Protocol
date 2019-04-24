@@ -27,30 +27,33 @@ class Health:
         return services
 
     def get_Doctors(self):
-        for key in doctors.keys():
-            print(doctors[key]['Name'])
-       # print("Id of doctor not found")
+        result = []
+        for key, doctor in doctors.items():
+            result.append(doctor['Name'])
+        return result
 
     def get_Patients(self):
-        for key in patients.keys():
-            print(patients[key]['Name'])
+        result = []
+        for key, patient in patients.items():
+            result.append(patient['Name'])
+            return result
 
     def get_DoctorByID(self, did):
         if did in doctors.keys():
-             print(doctors[did])
+            return doctors[did]
 
     def get_DoctorsAvailable(self):
+        result = []
         for key, doctor in doctors.items():
             if doctor['Availability']:
-                print(doctor['Name'])
+                result.append(doctor['Name'])
+        return result
 
     def updateDoctor(self, did, avail):
-        # Checking if Identification is in the dict
         if did in doctors.keys():
             doctors[did]['Availability'] = avail
-            print(doctors[did])
+            return doctors[did]
         else:
-            # Id is not in dictionary
             print("Doctor identification not found!")
 
     def get_protocols(self):
