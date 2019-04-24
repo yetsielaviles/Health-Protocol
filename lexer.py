@@ -44,7 +44,6 @@ t_COLON = r':'
 t_COMMA = r','
 t_ASSIGN = r'='
 
-
 def t_AVAILABILITY(t):
     r'True|False|true|false'
     return t
@@ -74,7 +73,6 @@ def t_DIGIT(t):
 # t_OPERATOR = "'.-/"
 literals = ".-'"  # operators
 
-
 # Error
 def t_error(t):
     print("Illegal Character '%s'" % t.value[0])
@@ -82,7 +80,6 @@ def t_error(t):
 
 # Build Lexer
 lexer = lex.lex()
-
 
 # Testing
 def fileRead():
@@ -98,6 +95,5 @@ def fileRead():
             print(tok)
             fileTokens.append(tok)
     return fileTokens
-
 
 fileRead()

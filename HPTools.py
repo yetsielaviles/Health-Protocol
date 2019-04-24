@@ -1,5 +1,6 @@
 from testing.tests import doctors, patients, beds, services, protocols
 
+
 class Health:
 
     def get_beds(self):

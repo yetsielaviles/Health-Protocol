@@ -3,7 +3,6 @@ from lexer import tokens
 from HPTools import Health
 
 # Defining parser rules
-
 def p_expression_create(p):
     'expression : CREATE LP NAME RP COLON'
     protocol = p[3]

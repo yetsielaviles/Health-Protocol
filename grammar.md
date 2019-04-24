@@ -29,4 +29,4 @@
     BIRTHDATE ::= {0-2 Digit | 3 0-1} / {{0 1-9} | {1 0-2}} / Digit Digit Digit Digit
     SSN ::= Digit Digit Digit Digit
     NAME ::= Character+ {{Operator Character}? Character* }*
-    ID ::= Character {Character | Digit}*
+    ID ::= Character {Character | Digit}* 
