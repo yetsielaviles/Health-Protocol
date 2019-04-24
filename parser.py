@@ -56,8 +56,7 @@ def p_expression_services(p):
 def p_expression_info(p):
     'expression : INFO LP ID RP COLON'
     did = str(p[3])
-    p= Health()
-    #Checking if id is in the dictionary
+    p = Health()
     print(p.get_DoctorByID(did))
 
 def p_expression_update(p):
@@ -121,4 +120,4 @@ while True:
         break
     if not s: continue
     result = parser.parse(s)
-    print(result)
+    # print(result)

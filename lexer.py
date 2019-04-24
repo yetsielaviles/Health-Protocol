@@ -58,7 +58,7 @@ def t_SSN(t):
     return t
 
 def t_NAME(t):
-    r'((Dr|Mrs?|Ms)\.)?[A-Za-z]([A-Za-z](\s|\.|\_)?)+[a-zA-Z]*'
+    r'((Dr|Mrs?|Ms)\.\s)?[A-Za-z]([A-Za-z](\s|\.|\_)?)+[a-zA-Z]*'
     if t.value in reserved:
         t.type = reserved[t.value]
     return t
