@@ -56,7 +56,12 @@ def p_expression_info(p):
     'expression : INFO LP ID RP COLON'
     did = str(p[3])
     p = Health()
-    print(p.get_DoctorByID(did))
+    if p.get_DoctorByID(did):
+        print(p.get_DoctorByID(did))
+    if p.get_PatientByID(did):
+        print(p.get_PatientByID(did))
+    else:
+        print('No patient or doctor with that ID.')
 
 def p_expression_update(p):
     'expression : UPDATE LP ID COMMA AVAILABILITY RP COLON'

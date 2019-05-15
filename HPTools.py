@@ -43,6 +43,10 @@ class Health:
         if did in doctors.keys():
             return doctors[did]
 
+    def get_PatientByID(self, did):
+        if did in patients.keys():
+            return patients[did]
+
     def get_DoctorsAvailable(self):
         result = []
         for key, doctor in doctors.items():
