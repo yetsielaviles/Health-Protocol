@@ -96,4 +96,4 @@ def fileRead():
             fileTokens.append(tok)
     return fileTokens
 
-fileRead()
+# fileRead()
