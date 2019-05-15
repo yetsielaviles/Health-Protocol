@@ -34,4 +34,8 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having trouble with our page? Feel free to contact any of our collaborators at the following emails:(yetsiel.aviles@upr.edu)
+(carlos.ayala11@upr.edu)
+(rex.reyes@upr.edu)
+(emmanuel.mercado@upr.edu)
+and we’ll be glad to help you out.
