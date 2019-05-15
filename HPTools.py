@@ -37,7 +37,7 @@ class Health:
         result = []
         for key, patient in patients.items():
             result.append(patient['Name'])
-            return result
+        return result
 
     def get_DoctorByID(self, did):
         if did in doctors.keys():
