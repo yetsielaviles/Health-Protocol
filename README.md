@@ -37,12 +37,12 @@ Once the project is running, you can start using any of the functions supported,
 If you need more details check the video tutorial included below.
 
 ## Contributors
-    - Yetsiel Avilés 
-    - Carlos Ayala
-    - Emmanuel Mercado
-    - Rex Reyes
-<a/>
-This project was develop as part of the Programing Languages course (CIIC4030) by Dr. Wilson Rivera.
+- Yetsiel Avilés 
+- Carlos Ayala
+- Emmanuel Mercado
+- Rex Reyes
+
+#### This project was develop as part of the Programing Languages course (CIIC4030) by Dr. Wilson Rivera.
 
 
   
