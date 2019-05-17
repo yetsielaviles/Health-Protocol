@@ -13,6 +13,16 @@ programming language was designed to be simple, but effective, and to be used as
 all future programming languages regarding health protocols and hospital maintenance. 
 
 ## Motivation
+We all have attended a hospital at least once, and we have seen how crowded hospitals can be. 
+Sometimes having so much patients can result in waiting a lot for any specific service we need, 
+like injections, serums, blood samples, respiratory therapies, an so on. Nurses have so much work 
+to do that they may forget for a moment about us. Maybe even doctors are not available at the moment 
+or rooms are full, and the nurse thinks otherwise and proceeds to send us to a room, when there really 
+isn’t one available. There are even cases where people who really need a service usually wait because 
+the hospital is attending people who didn’t really had a critical condition. We thought that if anyhow 
+we could have a language that organizes this chaos by having the number of rooms, doctors, nurses, and 
+services available to the patient, then we could accelerate the management and response of any scenario 
+that could arise. 
 
 ##Installation
 - Make sure you have Python 3.7.2 or higher installed. 
