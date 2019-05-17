@@ -14,17 +14,25 @@ all future programming languages regarding health protocols and hospital mainten
 
 ## Motivation
 
-##Installation
+## Installation
 - Make sure you have Python 3.7.2 or higher installed. 
 - Download the .zip file  or clone from the Github repository at https://github.com/yetsielaviles/Health-Protocol
 - Go to the directory where the project is located.
 - Once inside the Health-Protocol folder, run py parser.py to start.
 
-Note: you may need to use python3 parser.py if  you have other versions of python installed.
+**Note**: you may need to use python3 parser.py if  you have other versions of python installed.
 
-##Get Started
+## Get Started
 Once the project is running, you can start using any of the functions supported, refer to the Reference Manual for more details.
 If you need more details check the video tutorial included below.
+
+## Contributors
+    - Yetsiel Avilés 
+    - Carlos Ayala
+    - Emmanuel Mercado
+    - Rex Reyes
+   This project was develop as part of the Programing Languages course (CIIC4030) by Dr. Wilson Rivera.
+
 
   
 
