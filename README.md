@@ -41,6 +41,8 @@ If you need more details check the video tutorial included below.
     - Carlos Ayala
     - Emmanuel Mercado
     - Rex Reyes
+
+    
 This project was develop as part of the Programing Languages course (CIIC4030) by Dr. Wilson Rivera.
 
 
