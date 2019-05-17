@@ -1,41 +1,33 @@
-## Welcome to GitHub Pages
+# Health-Protocol
 
-You can use the [editor on GitHub](https://github.com/yetsielaviles/Health-Protocol/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Introduction
+The objective of this project was to create a programming language capable of  facilitating 
+process necessaries to maintain the services and protocols of a hospital, in a more accessible 
+way. Thinking as programmers, we made this programming language with the perspective that 
+anyone could use it. Every method of the programming language was intended to be not just easy
+to learn, but also short and simple so that no programming knowledge is required. The user is 
+able to perform multiple methods such as get access of a list of all the services that the 
+hospital offers, protocols, list of doctors on the hospital and those that are available, a 
+list of patients and beds available, and the feature of adding doctors and patients. This 
+programming language was designed to be simple, but effective, and to be used as a base for 
+all future programming languages regarding health protocols and hospital maintenance. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Motivation
 
-### Markdown
+##Installation
+- Make sure you have Python 3.7.2 or higher installed. 
+- Download the .zip file  or clone from the Github repository at https://github.com/yetsielaviles/Health-Protocol
+- Go to the directory where the project is located.
+- Once inside the Health-Protocol folder, run py parser.py to start.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Note: you may need to use python3 parser.py if  you have other versions of python installed.
 
-```markdown
-Syntax highlighted code block
+##Get Started
+Once the project is running, you can start using any of the functions supported, refer to the Reference Manual for more details.
+If you need more details check the video tutorial included below.
 
-# Header 1
-## Header 2
-### Header 3
+  
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/yetsielaviles/Health-Protocol/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with our page? Feel free to contact any of our collaborators at the following emails:(yetsiel.aviles@upr.edu)
-(carlos.ayala11@upr.edu)
-(rex.reyes@upr.edu)
-(emmanuel.mercado@upr.edu)
-and we’ll be glad to help you out.
