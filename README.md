@@ -33,7 +33,7 @@ that could arise.
 **Note**: you may need to use python3 parser.py if  you have other versions of python installed.
 
 ## Get Started
-Once the project is running, you can start using any of the functions supported, refer to the [Reference Manual [https://github.com/yetsielaviles/Health-Protocol/blob/master/Final%20Report.pdf] for more details.
+Once the project is running, you can start using any of the functions supported, refer to the Reference Manual for more details.
 If you need more details check the video tutorial included below.
 <!-- blank line -->
 <figure class="video_container">
