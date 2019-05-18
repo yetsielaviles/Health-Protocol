@@ -35,6 +35,11 @@ that could arise.
 ## Get Started
 Once the project is running, you can start using any of the functions supported, refer to the [Reference Manual](./Final Report.pdf) for more details.
 If you need more details check the video tutorial included below.
+<!-- blank line -->
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/embed/_BshxU9nK3U" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+<!-- blank line -->
 
 ## Contributors
 - Yetsiel Avilés 
