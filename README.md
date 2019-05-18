@@ -41,7 +41,6 @@ If you need more details check the video tutorial included below.
 </figure>
 <!-- blank line -->
 
-</br>
   
 [Full project report here](https://github.com/yetsielaviles/Health-Protocol/blob/master/Final%20Report.pdf)
 
